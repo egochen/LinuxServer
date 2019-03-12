@@ -103,6 +103,7 @@ $ `sudo nano /etc/sudoers.d/grader`  and add the following line to this file:
 
 grader ALL=(ALL) NOPASSWD:ALL
 Generate keypair on local machine using `ssh-keygen`, and copy the content of `grader.pub` file
+
 $ `sudo su grader`
 
 $ `mkdir .ssh`
@@ -125,30 +126,31 @@ $ `sudo -u postgres -i`
 
 - Git clone the catalogApp project in to a catalog directory
 - Create and fill the database:
-$ `sudo nano database_setup.py`
 
-$ `sudo nano categories_setup.py`
+  $ `sudo nano database_setup.py`
+
+  $ `sudo nano categories_setup.py`
 
 #### Install virtual environment:
-    $ `sudo virtualenv venv`
+$ `sudo virtualenv venv`
 
-    $ `source venv/bin/activate`
+$ `source venv/bin/activate`
     
-    $ `python3 -m venv env`
+$ `python3 -m venv env`
     
-    $ `sudo chmod -R 777 venv`
+$ `sudo chmod -R 777 venv`
     
-    $ `sudo pip install Flask`
+$ `sudo pip install Flask`
     
-    $ `sudo pip install bleach httplib2 request oauth2client sqlalchemy`
+$ `sudo pip install bleach httplib2 request oauth2client sqlalchemy`
     
-    $ `pip install psycopg2`
+$ `pip install psycopg2`
     
-    $ `sudo python database_setup.py`
+$ `sudo python database_setup.py`
     
-    $ `sudo python categories_setup.py`
+$ `sudo python categories_setup.py`
     
-    $ `sudo a2ensite catalog`
+$ `sudo a2ensite catalog`
 
 #### Enable the virtual host to host the .wsgi application:
 - Create catalog.wsgi file:
